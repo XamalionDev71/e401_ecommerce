@@ -1,3 +1,4 @@
+import 'package:e401_ecommerce/components/mi_boton.dart';
 import 'package:flutter/material.dart';
 
 class IntroPage extends StatelessWidget {
@@ -29,9 +30,13 @@ class IntroPage extends StatelessWidget {
 
             //Subtitulo
             Text('Productos Calidad Premium'),
-
-            //Botón
+            SizedBox(height: 25),
             
+            //Botón
+            MiBoton(
+              onTap: (){},
+              child: Icon(Icons.arrow_forward)
+            ),
           ],
         ),
       ),
