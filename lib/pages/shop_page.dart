@@ -1,3 +1,4 @@
+import 'package:e401_ecommerce/components/mi_menu.dart';
 import 'package:flutter/material.dart';
 
 class ShopPage extends StatelessWidget {
@@ -8,7 +9,7 @@ class ShopPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Tienda'),
       ),
-      drawer: Drawer(),
+      drawer: MiMenu(),
     );
   }
 }
