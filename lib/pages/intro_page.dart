@@ -31,10 +31,10 @@ class IntroPage extends StatelessWidget {
             //Subtitulo
             Text('Productos Calidad Premium'),
             SizedBox(height: 25),
-            
+
             //Botón
             MiBoton(
-              onTap: (){},
+              onTap: () => Navigator.pushNamed(context, '/shop_page'),
               child: Icon(Icons.arrow_forward)
             ),
           ],
