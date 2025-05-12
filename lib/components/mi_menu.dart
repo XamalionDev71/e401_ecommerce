@@ -17,33 +17,30 @@ class MiMenu extends StatelessWidget {
               child: Icon(
                 Icons.shopping_bag,
                 size: 72,
-                color: theme.inversePrimary
+                color: theme.inversePrimary,
               ),
             ),
           ),
           SizedBox(height: 25),
 
           //Tienda
-          MiElementoLista(
-            text: 'Tienda',
-            icon: Icons.home,
-            onTap: (){}
-          ),
+          MiElementoLista(text: 'Tienda', icon: Icons.home, onTap: () {}),
 
           //Carrito de compras
           MiElementoLista(
             text: 'Carrito',
             icon: Icons.shopping_cart,
-            onTap: (){}
+            onTap: () {
+              //primeramente salimos del drawer
+              Navigator.pop(context);
+
+              //Navegar a la página del carrito de compras
+              Navigator.pushNamed(context, '/cart_page');
+            },
           ),
 
           //Salir
-          MiElementoLista(
-            text: 'Salir',
-            icon: Icons.logout,
-            onTap: (){}
-          ),
-
+          MiElementoLista(text: 'Salir', icon: Icons.logout, onTap: () {}),
         ],
       ),
     );
