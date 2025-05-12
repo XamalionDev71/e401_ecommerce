@@ -40,7 +40,15 @@ class MiMenu extends StatelessWidget {
           ),
 
           //Salir
-          MiElementoLista(text: 'Salir', icon: Icons.logout, onTap: () {}),
+          MiElementoLista(
+            text: 'Salir', 
+            icon: Icons.logout, 
+            onTap: () => Navigator.pushNamedAndRemoveUntil(
+              context,
+              '/intro_page',
+              (route) => false
+            ),
+          ),
         ],
       ),
     );
