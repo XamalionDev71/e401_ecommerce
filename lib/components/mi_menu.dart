@@ -24,7 +24,14 @@ class MiMenu extends StatelessWidget {
           SizedBox(height: 25),
 
           //Tienda
-          MiElementoLista(text: 'Tienda', icon: Icons.home, onTap: () {}),
+          MiElementoLista(
+            text: 'Tienda', 
+            icon: Icons.home, 
+            onTap: () {
+              //salimos del drawer
+              Navigator.pop(context);
+            }
+            ),
 
           //Carrito de compras
           MiElementoLista(
