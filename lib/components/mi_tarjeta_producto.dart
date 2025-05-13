@@ -19,20 +19,58 @@ class MiTarjetaProducto extends StatelessWidget {
       padding: EdgeInsets.all(25),
       width: 300,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          //imagen
-          Container(
-            child: Icon(Icons.favorite),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              //imagen
+              AspectRatio(
+                aspectRatio: 1,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: theme.secondary,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  width: double.infinity,
+                  padding: EdgeInsets.all(25),
+                  child: Icon(Icons.favorite),
+                ),
+              ),
+              SizedBox(height: 25),
+
+              //nombre del producto
+              Text(
+                producto.nombre,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              ),
+              SizedBox(height: 10),
+
+              //descripción
+              Text(
+                producto.descripcion,
+                style: TextStyle(color: theme.inversePrimary),
+              ),
+            ],
           ),
 
-          //nombre del producto
-          Text(producto.nombre),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              //precio del producto + botón agregar al carrito
+              Text(producto.precio.toStringAsFixed(2)),
 
-          //descripción
-          Text(producto.descripcion),
-
-          //precio del producto + botón agregar al carrito
-          Text(producto.precio.toStringAsFixed(2)),
+              //Botón de agregar al carrito
+              Container(
+                decoration: BoxDecoration(
+                  color: theme.secondary,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: IconButton(onPressed: () {}, icon: Icon(Icons.add)),
+              ),
+            ],
+          ),
         ],
       ),
     );
