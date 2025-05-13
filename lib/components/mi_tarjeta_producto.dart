@@ -1,10 +1,35 @@
 import 'package:e401_ecommerce/models/producto.dart';
+import 'package:e401_ecommerce/models/tienda.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class MiTarjetaProducto extends StatelessWidget {
   final Producto producto;
 
   const MiTarjetaProducto({super.key, required this.producto});
+
+  void agregarAlCarrito(BuildContext context) {
+    showDialog(
+      context: context,
+      builder:
+          (context) => AlertDialog(
+            content: Text('Agregar este producto al carrito?'),
+            actions: [
+              MaterialButton(
+                onPressed: () => Navigator.pop(context),
+                child: Text('Cancelar'),
+              ),
+              MaterialButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                  context.read<Tienda>().agregarAlCarrito(producto);
+                },
+                child: Text('Si'),
+              ),
+            ],
+          ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +92,9 @@ class MiTarjetaProducto extends StatelessWidget {
                   color: theme.secondary,
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: IconButton(onPressed: () {}, icon: Icon(Icons.add)),
+                child: IconButton(
+                  onPressed: () => agregarAlCarrito(context),
+                  icon: Icon(Icons.add)),
               ),
             ],
           ),
