@@ -1,6 +1,7 @@
 import 'package:e401_ecommerce/models/producto.dart';
+import 'package:flutter/material.dart';
 
-class Tienda {
+class Tienda extends ChangeNotifier {
   //Lista de productos
   final List<Producto> _tienda = [
     Producto(
@@ -41,10 +42,12 @@ class Tienda {
   //agregar productos al carrito
   void agregarAlCarrito(Producto producto) {
     _carrito.add(producto);
+    notifyListeners();
   }
 
   //eliminar productos del carrito
   void eliminarDelCarrito(Producto producto) {
     _carrito.remove(producto);
+    notifyListeners();
   }
 }

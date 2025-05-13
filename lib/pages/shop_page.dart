@@ -10,6 +10,11 @@ class ShopPage extends StatelessWidget {
         title: Text('Tienda'),
       ),
       drawer: MiMenu(),
+      body: ListView.builder(
+        itemBuilder: (){
+          
+        }
+      ),
     );
   }
 }
