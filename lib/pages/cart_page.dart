@@ -1,9 +1,39 @@
+import 'dart:js_interop';
+
+import 'package:e401_ecommerce/models/producto.dart';
 import 'package:e401_ecommerce/models/tienda.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
+
+  void eliminarProductoDelCarrito(BuildContext context, Producto producto) {
+    showDialog(
+      context: context,
+      builder:
+          (context) => AlertDialog(
+            content: Text('Desea eliminar este producto del carrito?'),
+            actions: [
+              //cancelar
+              MaterialButton(
+                onPressed: () => Navigator.pop(context),
+                child: Text('Cancelar'),
+              ),
+
+              //confirmar
+              MaterialButton(
+                onPressed: () {
+                  Navigator.pop(context);
+
+                  context.read<Tienda>().eliminarDelCarrito(producto);
+                },
+                child: Text('Si'),
+              ),
+            ],
+          ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +60,8 @@ class CartPage extends StatelessWidget {
                 title: Text(item.nombre),
                 subtitle: Text(item.precio.toStringAsFixed(2)),
                 trailing: IconButton(
-                  onPressed: (){},
-                  icon: Icon(Icons.remove)
+                  onPressed: () {},
+                  icon: Icon(Icons.remove),
                 ),
               );
             },
