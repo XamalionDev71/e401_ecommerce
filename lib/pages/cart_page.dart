@@ -1,5 +1,4 @@
-import 'dart:js_interop';
-
+import 'package:e401_ecommerce/components/mi_boton.dart';
 import 'package:e401_ecommerce/models/producto.dart';
 import 'package:e401_ecommerce/models/tienda.dart';
 import 'package:flutter/material.dart';
@@ -35,6 +34,15 @@ class CartPage extends StatelessWidget {
     );
   }
 
+  void pagarBotonPresionado(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+          content: Text('El usuario quiere pagar!! Desarrolla el backend de pago!!'),
+        )
+      );
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).colorScheme;
@@ -51,20 +59,29 @@ class CartPage extends StatelessWidget {
       backgroundColor: theme.surface,
       body: Column(
         children: [
-          ListView.builder(
-            itemCount: carrito.length,
-            itemBuilder: (context, index) {
-              final item = carrito[index];
-
-              return ListTile(
-                title: Text(item.nombre),
-                subtitle: Text(item.precio.toStringAsFixed(2)),
-                trailing: IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.remove),
-                ),
-              );
-            },
+          Expanded(
+            child: ListView.builder(
+              itemCount: carrito.length,
+              itemBuilder: (context, index) {
+                final item = carrito[index];
+            
+                return ListTile(
+                  title: Text(item.nombre),
+                  subtitle: Text(item.precio.toStringAsFixed(2)),
+                  trailing: IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.remove),
+                  ),
+                );
+              },
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(50),
+            child: MiBoton(
+              onTap: () => pagarBotonPresionado(context),
+              child: Text('PAGAR'),
+            ),
           ),
         ],
       ),
