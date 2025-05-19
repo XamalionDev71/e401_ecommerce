@@ -27,7 +27,12 @@ class CartPage extends StatelessWidget {
               final item = carrito[index];
 
               return ListTile(
-                
+                title: Text(item.nombre),
+                subtitle: Text(item.precio.toStringAsFixed(2)),
+                trailing: IconButton(
+                  onPressed: (){},
+                  icon: Icon(Icons.remove)
+                ),
               );
             },
           ),
