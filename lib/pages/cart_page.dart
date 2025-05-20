@@ -60,7 +60,10 @@ class CartPage extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-            child: ListView.builder(
+            child: 
+            carrito.isEmpty 
+              ? Center(child: Text('Carrito Vacio...'),)
+              : ListView.builder(
               itemCount: carrito.length,
               itemBuilder: (context, index) {
                 final item = carrito[index];
@@ -69,7 +72,7 @@ class CartPage extends StatelessWidget {
                   title: Text(item.nombre),
                   subtitle: Text(item.precio.toStringAsFixed(2)),
                   trailing: IconButton(
-                    onPressed: () {},
+                    onPressed: () => eliminarProductoDelCarrito(context, item),
                     icon: Icon(Icons.remove),
                   ),
                 );
