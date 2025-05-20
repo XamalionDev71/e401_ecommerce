@@ -14,7 +14,13 @@ class ShopPage extends StatelessWidget {
     final theme = Theme.of(context).colorScheme;
 
     return Scaffold(
-      appBar: AppBar(title: Text('Tienda')),
+      appBar: AppBar(
+        title: Text('Tienda'),
+        actions: [
+          IconButton(onPressed: ()=>Navigator.pushNamed(context, '/cart_page'),
+          icon: Icon(Icons.shopping_cart_checkout_outlined)),
+        ],
+      ),
       drawer: MiMenu(),
       body: ListView(
         children: [
