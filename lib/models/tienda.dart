@@ -5,28 +5,28 @@ class Tienda extends ChangeNotifier {
   //Lista de productos
   final List<Producto> _tienda = [
     Producto(
-      nombre: 'Producto 1',
-      precio: 99.99,
-      descripcion: 'Descripción del producto 1',
-      rutaImagen: '',
+      nombre: 'Lentes',
+      precio: 159.99,
+      descripcion: 'Veniam ut id culpa id nostrud qui.',
+      rutaImagen: 'assets/glasses.png',
     ),
     Producto(
-      nombre: 'Producto 2',
-      precio: 99.99,
-      descripcion: 'Descripción del producto 2',
-      rutaImagen: '',
+      nombre: 'Sudadera',
+      precio: 569.99,
+      descripcion: 'Non tempor occaecat sint duis nostrud magna proident.',
+      rutaImagen: 'assets/hoodie.png',
     ),
     Producto(
-      nombre: 'Producto 3',
-      precio: 99.99,
-      descripcion: 'Descripción del producto 3',
-      rutaImagen: '',
+      nombre: 'Reloj',
+      precio: 2349.29,
+      descripcion: 'Cupidatat commodo officia aute aliqua velit mollit proident aute anim.',
+      rutaImagen: 'assets/watch.png',
     ),
     Producto(
-      nombre: 'Producto 4',
-      precio: 99.99,
-      descripcion: 'Descripción del producto 4',
-      rutaImagen: '',
+      nombre: 'Tenis',
+      precio: 8999.99,
+      descripcion: 'Do eiusmod consequat ipsum nulla reprehenderit eiusmod anim dolor dolor cillum aliqua enim.',
+      rutaImagen: 'assets/shoes.png',
     ),
   ];
 
