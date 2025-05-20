@@ -25,13 +25,13 @@ class MiMenu extends StatelessWidget {
 
           //Tienda
           MiElementoLista(
-            text: 'Tienda', 
-            icon: Icons.home, 
+            text: 'Tienda',
+            icon: Icons.home,
             onTap: () {
               //salimos del drawer
               Navigator.pop(context);
-            }
-            ),
+            },
+          ),
 
           //Carrito de compras
           MiElementoLista(
@@ -45,16 +45,25 @@ class MiMenu extends StatelessWidget {
               Navigator.pushNamed(context, '/cart_page');
             },
           ),
+          MiElementoLista(
+            text: 'Configuración',
+            icon: Icons.settings,
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/settings_page');
+            },
+          ),
 
           //Salir
           MiElementoLista(
-            text: 'Salir', 
-            icon: Icons.logout, 
-            onTap: () => Navigator.pushNamedAndRemoveUntil(
-              context,
-              '/intro_page',
-              (route) => false
-            ),
+            text: 'Salir',
+            icon: Icons.logout,
+            onTap:
+                () => Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  '/intro_page',
+                  (route) => false,
+                ),
           ),
         ],
       ),
