@@ -1,10 +1,18 @@
+import 'package:e401_ecommerce/models/tienda.dart';
+import 'package:e401_ecommerce/pages/cart_page.dart';
 import 'package:e401_ecommerce/pages/intro_page.dart';
 import 'package:e401_ecommerce/pages/shop_page.dart';
 import 'package:e401_ecommerce/themes/light_mode.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => Tienda(),
+      child: const MainApp(),
+    ),
+  );
 }
 
 class MainApp extends StatelessWidget {
@@ -19,6 +27,7 @@ class MainApp extends StatelessWidget {
       routes: {
         '/intro_page':(context) => IntroPage(),
         '/shop_page': (_) => ShopPage(),
+        '/cart_page': (_) => CartPage(),
       },
     );
   }

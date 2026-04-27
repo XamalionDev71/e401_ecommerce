@@ -19,23 +19,33 @@ class MiMenu extends StatelessWidget {
                 child: Icon(
                   Icons.shopping_bag,
                   size: 72,
-                  color: theme.inversePrimary
-                )
+                  color: theme.inversePrimary,
+                ),
               ),
               SizedBox(height: 30),
 
               //tienda
               MiElementoLista(
-                text: 'Tienda', 
+                text: 'Tienda',
                 icon: Icons.home,
-                onTap: ()=>Navigator.pop(context),
+                onTap: () {
+                  //Cerramos el drawer (mi_menu)
+                  Navigator.pop(context);
+                  //Navegamos a la página de Carrito
+                  Navigator.pushNamed(context, '/shop_page');
+                },
               ),
 
               //carrito
               MiElementoLista(
-                text: "Carrito", 
+                text: "Carrito",
                 icon: Icons.shopping_cart,
-                onTap: () {},
+                onTap: () {
+                  //Cerramos el drawer (mi_menu)
+                  Navigator.pop(context);
+                  //Navegamos a la página de Carrito
+                  Navigator.pushNamed(context, '/cart_page');
+                },
               ),
             ],
           ),
@@ -46,7 +56,11 @@ class MiMenu extends StatelessWidget {
             child: MiElementoLista(
               text: 'Salir',
               icon: Icons.logout,
-              onTap: (){},
+              onTap: () => Navigator.pushNamedAndRemoveUntil(
+                context,
+                '/intro_page',
+                (route)=>false
+              ),
             ),
           ),
         ],
