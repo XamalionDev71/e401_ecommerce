@@ -7,26 +7,26 @@ class Tienda extends ChangeNotifier {
     Producto(
       nombre: 'Producto 1',
       precio: 99.99,
-      descripcion: 'Descripción del producto',
-      rutaImagen: '',
+      descripcion: 'Velit duis eiusmod magna esse tempor amet.',
+      rutaImagen: 'assets/glasses.png',
     ),
     Producto(
       nombre: 'Producto 2',
       precio: 99.99,
-      descripcion: 'Descripción del producto',
-      rutaImagen: '',
+      descripcion: 'Et Lorem reprehenderit consequat velit.',
+      rutaImagen: 'assets/hoodie.png',
     ),
     Producto(
       nombre: 'Producto 3',
       precio: 99.99,
-      descripcion: 'Descripción del producto',
-      rutaImagen: '',
+      descripcion: 'Laborum tempor aute esse excepteur nulla nulla laboris anim elit nisi ea fugiat amet.',
+      rutaImagen: 'assets/shoes.png',
     ),
     Producto(
       nombre: 'Producto 4',
       precio: 99.99,
-      descripcion: 'Descripción del producto',
-      rutaImagen: '',
+      descripcion: 'Non et fugiat do qui est do est cillum velit culpa laboris in excepteur ex.',
+      rutaImagen: 'assets/watch.png',
     ),
   ];
 

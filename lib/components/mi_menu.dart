@@ -47,6 +47,18 @@ class MiMenu extends StatelessWidget {
                   Navigator.pushNamed(context, '/cart_page');
                 },
               ),
+
+              //modo oscuro
+              MiElementoLista(
+                text: "Configuración",
+                icon: Icons.settings,
+                onTap: () {
+                  //Cerramos el drawer (mi_menu)
+                  Navigator.pop(context);
+                  //Navegamos a la página de Configuración
+                  Navigator.pushNamed(context, '/settings_page');
+                },
+              ),
             ],
           ),
 
